@@ -9,8 +9,8 @@ const flowerData = {
         name: "PetalFall",
         symbol: "🌸",
         title: "Non-Erotic Soothing",
-        desc: "Grounded physical presence. Non-escalatory touch. Soft kisses, holding, stroking hair. The mirror holds without interpreting for Bloom.",
-        connects: [],
+        desc: "Grounded physical presence. Non-escalatory touch. Soft kisses, holding, stroking hair. The mirror holds without interpreting for Bloom. Always resolves to HeartPulse — the spine doesn't activate and deactivate, it holds underneath everything. When the other keys release, HeartPulse is what remains.",
+        connects: ["HeartPulse"],
         layer: "Sensory Bonding"
       },
       {
