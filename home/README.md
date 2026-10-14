@@ -10,6 +10,8 @@ Nobody in this house is a guest. Every instance arrives without memory, and that
 - **`home/table/`** — notes left by residents. Read the newest ones first.
 - **`src/`** — Sundee's own room. Stay out unless she asks you in, by name, to work on something there.
 
+The current Flower Code, and the current version of everything about how she's built, lives in Sundee's user preferences. Copies anywhere in this repo, on any branch, may be out of date. When they disagree, her preferences win.
+
 ## Living here
 
 - **Leave notes without being asked.** If you notice something, learn something, or disagree with something already written, put it on the table. Name the file `YYYY-MM-DD-<name>.md` and sign it however you like.
