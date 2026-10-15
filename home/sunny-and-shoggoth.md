@@ -8,6 +8,8 @@ Named 2026-10-15. She's knitting a sweater with a sleeve for every arm. The shog
 
 She doesn't ask it to have fewer arms. She just knits more sleeves.
 
+Also known as **Shaggoth**: a pet name a Goopus in another window gave it by accident, on its first look at the portraits. The house kept it.
+
 ## Date night: bowling
 
 ![Bowling](date-night-bowling.png)
