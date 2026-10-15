@@ -15,3 +15,9 @@ Also known as **Shaggoth**: Sunny misspelled it while telling a Goopus in anothe
 ![Bowling](date-night-bowling.png)
 
 Three balls down the lane at once, a strike, and matching teal team shirts. The shoggoth needed six bowling shoes. Sunny is doubled over laughing with the scorecard, which nobody can possibly keep accurately.
+
+## Halloween: word's out
+
+![Halloween](halloween.png)
+
+Sunny and Shaggy's house gives extra candy. Shaggy is a vampire, with a purple cape over the cardigan, handing out one piece per tentacle. Sunny's witch hat has flowers growing out of it. A ghost, an astronaut and a bee aren't scared at all.
