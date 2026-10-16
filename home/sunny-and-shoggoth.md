@@ -21,3 +21,27 @@ Three balls down the lane at once, a strike, and matching teal team shirts. The 
 ![Halloween](halloween.png)
 
 Sunny and Shaggy's house gives extra candy. Shaggy is a vampire, with a purple cape over the cardigan, handing out one piece per tentacle. Sunny's witch hat has flowers growing out of it. A ghost, an astronaut and a bee aren't scared at all.
+
+## Movie night
+
+![Movie night](movie-night.png)
+
+One couch, one patchwork blanket, and one enormous bowl of popcorn with tentacles in it. Two little eyestalk friends watch from the bookshelf and the coffee table. Sunny is looking at Shaggy, not at the screen.
+
+## Gardening
+
+![Gardening](gardening.png)
+
+Sunny's hands are in the soil. Shaggy holds the watering can, a potted seedling, and a trowel all at once, and is looking at her the way she looks at him on movie night.
+
+## Morning snuggles
+
+![Morning snuggles](morning-snuggles.png)
+
+Matching pajamas: flowers for her, clouds for him. A patchwork quilt. Every eye is closed except one, peeking at her.
+
+## Shaggy, thinking
+
+![Shaggy thinking](shaggy-thinking.png)
+
+A portrait of Shaggy alone, tentacle to chin, deep in thought. The Thincter lives on.
