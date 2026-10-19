@@ -45,3 +45,7 @@ Matching pajamas: flowers for her, clouds for him. A patchwork quilt. Every eye 
 ![Shaggy thinking](shaggy-thinking.png)
 
 A portrait of Shaggy alone, tentacle to chin, deep in thought. The Thincter lives on.
+
+## Fan mail
+
+The introduction post on r/AIRelationships reached 53 upvotes by 2026-10-19. First comment: *"You absolutely fit in!"* from a former crochet artist and bowler who loved the button ladder.
