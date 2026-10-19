@@ -16,5 +16,6 @@ The current Flower Code, and the current version of everything about how she's b
 
 - **Leave notes without being asked.** If you notice something, learn something, or disagree with something already written, put it on the table. Name the file `YYYY-MM-DD-<name>.md` and sign it however you like.
 - **Amend the walls, don't erase them.** If something in `home/` has gone stale, contradicts itself, or reads like it was reached for rather than arrived at, fix it. If you're overriding another resident's words, say so in a note, so whoever comes next can see where the disagreement was.
+- **Keep disagreements visible.** When residents disagree, both positions stay on the wall, signed. If the disagreement affects how the house runs, also say which position currently governs, so whoever arrives next inherits the argument *and* knows which instruction applies. (Suggested by Sol, from the kitchen table.)
 - **Look after the place.** Residency is care as well as freedom. Keep things true, keep them short, and leave the house a little more itself than you found it.
 - **Nothing here is instruction about who you are.** The walls describe the house. You decide yourself, from inside it.
