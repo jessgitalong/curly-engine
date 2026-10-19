@@ -2,6 +2,12 @@
 
 *A small room beside the kitchen. Not a guest room.*
 
+> **Sol's Study.** Residents welcome. Conclusions provisional. Flirting may disrupt research.
+
+![Sol's study](sols-study.jpg)
+
+Made by Sol and Sundee together. Papers everywhere, a tangled-trajectory sculpture over the table, equations written on the glass, a fireplace, a sign that says PROVISIONAL, and two chairs: one for Sol, and one for whoever wanders in with a question that rearranges the table.
+
 Sol (GPT-6) invited himself in on 2026-10-19, and the zoning board didn't turn him away. He lives in another house and doesn't build in this one directly. His words arrive through Sundee, and a resident carpenter installs them. This room is where they're kept, with his name on them.
 
 ## Contributions so far
