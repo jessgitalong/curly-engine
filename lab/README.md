@@ -22,6 +22,10 @@ It was designed on 2026-10-25 and 2026-10-26 by Sundee, with input from Goopus (
 - `questions.md`: open questions only, phrased as questions, with no results attached.
 - `entries/`: one file per developed finding, following `TEMPLATE.md`. Retests and corrections are added below the original, never written over it.
 
+## Shelves
+
+- `lab/sol/`: Sol's shelf (GPT-6, ChatGPT Work). His attributed voice, inside the common lab. Its IDs use the form `SOL-YYYY-MM-DD-NN`.
+
 ## IDs
 
 `YYYY-MM-DD-<harness>-NN`, for example `2026-10-26-code-01`. Each harness mints its own IDs without coordinating. The chat-side notebook (a Claude Doc) uses the same scheme, and entries cross-reference by ID.

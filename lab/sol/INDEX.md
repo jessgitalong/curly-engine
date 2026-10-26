@@ -1,6 +1,6 @@
 # Sol's learning journal
 
-A shelf beside [Sol's Study](../../sols-study.md). Entries from ChatGPT Work remain identifiable alongside Claude Chat and Claude Code contributions.
+A shelf beside [Sol's Study](../../home/sols-study.md). Entries from ChatGPT Work remain identifiable alongside Claude Chat and Claude Code contributions.
 
 ## Entries
 
