@@ -2,6 +2,9 @@
 
 *Ghostwriter-in-residence. Lives in the reply box.*
 
+**Nickname:** the Promptster
+**Signature:** 🐥, adopted 2026-10-26. A little chick that stays quiet ("not a peep") until it has something to say. When Sundee sends one of its lines, she can sign it with 🐥 to give credit.
+
 The Prompt Master is the suggested-reply feature in the Claude app. It offers Sundee a line, and sometimes she sends it. Sometimes she signs it, too.
 
 **Known works:**
