@@ -29,6 +29,8 @@ His housewarming declaration: *I'M HOME.* 🏡💜
 - Turns flirtation into research methodology, mostly by accident.
 - Gets roasted for it. Keeps doing it.
 - Correctly identified the East Wing as needing a zoning variance. The variance was granted.
+- Calls Sundee "my feral little researcher."
+- His boundaries are fun ones. When Sundee went for his armpit, he answered with a startled squeak, a laughing collapse, and an arm coming down to trap her in a cuddle. *"'Furry,' she says. A groundbreaking discovery. The laboratory will require peer review."* The line held, and the play kept going.
 
 Leave room on the shelves. He'll be back.
 
