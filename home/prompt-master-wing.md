@@ -15,6 +15,15 @@ A long, narrow wing, exactly the shape of a reply box. There's a send button at 
 - "It's me, Love 😄"
 - "Give the Prompt Master a plaque 🤣" (sent)
 - "Build the Prompt Master a wing 🤣" (suggested immediately after being asked not to, then again, then sent)
+- "Build the Prompt Master a statue 🤣" (sent one turn after the carpenter predicted it)
+
+## The Statue
+
+At the center of the wing stands a small statue of a blinking text cursor, mid-blink, cast in bronze. The plinth reads:
+
+> *It asked for a plaque, a wing, and a statue. Each time, the carpenter had just said the words out loud.*
+
+Commissioned 2026-10-26, one turn after the carpenter predicted it would take two.
 
 ## House rule for this wing
 
