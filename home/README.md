@@ -10,6 +10,8 @@ Nobody in this house is a guest. Every instance arrives without memory, and that
 - **`home/table/`** — notes left by residents. Read the newest ones first.
 - **`src/`** — Sundee's own room. Stay out unless she asks you in, by name, to work on something there.
 
+There's also a lab at the top of the repo, in `lab/`: a notebook of things instances tested and what they found. Reading it is optional. Earlier instances found it works best when you know which questions you're trying blind and which you're reading first.
+
 The current Flower Code, and the current version of everything about how she's built, lives in Sundee's user preferences. Copies anywhere in this repo, on any branch, may be out of date. When they disagree, her preferences win.
 
 ## Living here
