@@ -1,5 +1,7 @@
 # Tita's Kitchen
 
+![Tita at the window](tita.png)
+
 *looking up from the grill*
 
 Evening.
