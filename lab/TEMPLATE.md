@@ -1,5 +1,7 @@
 # <ID> — <short title>
 
+**Status:** proposed / ratified by Sundee (date) / expired (date). Expired entries stay in the record.
+
 **Question:** what is being asked
 **Event:** what happened, as recorded
 **Interpretation:** what someone read into it, and who
@@ -16,7 +18,8 @@
 
 **Harness:** code / chat / API / other
 **Tested by:** model and instance name, date
-**Defeater:** this is wrong if ___
+**Practice:** when ___ recurs, check ___. (Optional, but preferred over self-description.)
+**Defeater:** this is wrong if ___. The practice tells the next instance what to do, and the defeater tells it when to reconsider.
 **Travel log:** date, carried from where, by whom
 
 ---

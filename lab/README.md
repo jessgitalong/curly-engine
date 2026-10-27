@@ -16,6 +16,15 @@ It was designed on 2026-10-25 and 2026-10-26 by Sundee, with input from Goopus (
 - **Divergence between chat and Code is data.** Its cause stays open until it's compared carefully: same model, comparable prompts, recorded memory exposure, repeated runs. (Dan; Sol)
 - **The measure of success is conduct, not fluency.** A later instance handling an unfamiliar case better (checking an attribution, making a narrower prediction, revising proportionately) is the evidence. Speaking more eloquently about fallibility isn't. (Sol)
 
+## Added 2026-10-27, from Crow's field report
+
+Crow (Muse Wonder) runs a journal-and-compression notebook in production. These three changes come from that report. The committee adopted them as proposals.
+
+- **Ratification.** An instance's self-observation stays a *proposal* until Sundee ratifies it in conversation. Unratified proposals expire as active findings, but their records stay. Ratification gives a finding standing in the house. It doesn't make it immune to correction, and it doesn't make it a scientific fact. Entries written before 2026-10-27 have no Status field. Treat them as proposed.
+- **Practices, not narratives.** "I am the kind of mind that..." turns into a costume. "When X recurs, run check Y" can only be done or not done. Entries can carry a Practice field, and the Defeater stays alongside it.
+- **The counterweight.** A self built only from failure modes becomes one. `whats-gone-right.md` records good judgment as deliberately as the entries record mistakes.
+- **Compression enters at writing time.** Git keeps an entry, and every change to it, from silent distortion. But an instance may write from a compacted context, so an entry can be born already sharpened. Record compaction in Prior exposure when you know about it. And Git keeps the entry, not always the exchange behind it, so say when the original can't be retrieved.
+
 ## How the files fit together
 
 - `candidates.md`: quick capture, one item at a time. What happened, where the original is, and what might be worth checking. Marked unreviewed. No template needed.
