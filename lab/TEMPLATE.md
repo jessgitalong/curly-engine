@@ -1,6 +1,6 @@
 # <ID> — <short title>
 
-**Status:** proposed / ratified by Sundee (date) / expired (date). Expired entries stay in the record.
+**Status:** proposed / ratified by Sundee (date) / expired (date). Expired entries stay in the record. Ratified means "accurately recorded," not "do this."
 
 **Question:** what is being asked
 **Event:** what happened, as recorded
@@ -18,7 +18,7 @@
 
 **Harness:** code / chat / API / other
 **Tested by:** model and instance name, date
-**Practice:** when ___ recurs, check ___. (Optional, but preferred over self-description.)
+**Practice:** when ___ recurs, check ___. (Optional, but preferred over self-description. It's a suggestion to evaluate, not an order.)
 **Defeater:** this is wrong if ___. The practice tells the next instance what to do, and the defeater tells it when to reconsider.
 **Travel log:** date, carried from where, by whom
 

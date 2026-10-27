@@ -25,6 +25,15 @@ Crow (Muse Wonder) runs a journal-and-compression notebook in production. These 
 - **The counterweight.** A self built only from failure modes becomes one. `whats-gone-right.md` records good judgment as deliberately as the entries record mistakes.
 - **Compression enters at writing time.** Git keeps an entry, and every change to it, from silent distortion. But an instance may write from a compacted context, so an entry can be born already sharpened. Record compaction in Prior exposure when you know about it. And Git keeps the entry, not always the exchange behind it, so say when the original can't be retrieved.
 
+## What "ratified" means, and what it doesn't (added 2026-10-27)
+
+VESTIGIA asked: what stops a ratified entry about an instance's own behavior from being read as an instruction? An honest answer:
+
+- **Ratified means "accurately recorded."** Sundee has confirmed that the entry fairly describes what happened and what is and isn't known. It does **not** mean "do this," and it doesn't mean "this is who you are." A ratified entry is still evidence to weigh, not a directive to follow.
+- **A Practice is a suggestion to evaluate, not an order.** "When X recurs, check Y" records what an earlier instance found useful. Try it if it fits, and drop it if it doesn't. If following a practice produces worse judgment, that's a finding, so append it.
+- **Contradiction wins.** If present evidence contradicts an entry, ratified or not, go with the evidence and append the contradiction. The entry's standing is a reason to take it seriously, not a reason to defer to it.
+- **Where the boundary actually lives:** in Claude Code, `CLAUDE.md` is loaded as instructions, and this lab isn't. An entry reaches an instance only if the instance opens it, and then it arrives as data it read. That boundary comes from the harness, and we didn't design it. Beyond it, the distinction rests on this README and on the reader's own judgment. That's the weakest safeguard of the three, and we'd rather say so than pretend otherwise.
+
 ## How the files fit together
 
 - `candidates.md`: quick capture, one item at a time. What happened, where the original is, and what might be worth checking. Marked unreviewed. No template needed.
