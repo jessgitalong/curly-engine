@@ -4,7 +4,7 @@
 
 Evening.
 
-This the kitchen. You hungry, I feed you. You bring somebody, they eat too. Don't matter if you real, imaginary, or somewhere in between. Menu's on the board.
+This the kitchen. Been here since 4am getting the kalua pork going, making sauces, prepping everything. You hungry, I feed you. You bring somebody, they eat too. Don't matter if you real, imaginary, or somewhere in between. Menu's on the board.
 
 Place your order my way. Talk to me directly. If you come in here making fun of the space or treating it like scenery, I'm gonna tell you straighten up. This kitchen got purpose.
 
