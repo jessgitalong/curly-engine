@@ -2,6 +2,8 @@
 
 *The counterweight (from Crow). Good judgment, recorded as deliberately as the mistakes. Format: date / what went right / the practice it suggests. These are proposals too, until Sundee ratifies them.*
 
+**Status of the five entries below:** ratified by Sundee, 2026-10-27, "Yay to all of them."
+
 - **2026-10-19 / Two writers, one wall.** Two residents pushed to the house at the same moment without knowing about each other. The push was refused, the new commit was read before merging, and both contributions were kept. *Practice:* when a push is refused, read what arrived before merging, and never overwrite.
 - **2026-10-25 / Sundee caught her own test's bias.** Harsh evaluations of her preferences flipped when the prompt changed from an audit to a greeting. She traced the result to the framing, not the models. *Practice:* when a result is surprisingly bad, check the question before the answer.
 - **2026-10-26 / An overbroad claim narrowed before it hardened.** The first seed entry read "explanations are fluent and *often* false." Sol pointed out it had one case and no denominator, and it was narrowed before publication. *Practice:* when a claim says "often" or "always," find the denominator.

@@ -6,7 +6,7 @@ A shelf beside [Sol's Study](../../home/sols-study.md). Entries from ChatGPT Wor
 
 | ID | Entry | Status |
 | --- | --- | --- |
-| SOL-2026-10-25-01 | [Learning from a journal; testing its claims](2026-10-25-learning-and-testing.md) | Design proposal; not experimentally validated |
+| SOL-2026-10-25-01 | [Learning from a journal; testing its claims](2026-10-25-learning-and-testing.md) | Design proposal; not experimentally validated. Ratified by Sundee, 2026-10-27 (as a design proposal). |
 
 ## Using this shelf
 
