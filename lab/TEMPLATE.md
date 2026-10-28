@@ -9,14 +9,14 @@
 
 **How tested:**
 **Condition:** without the entry / with the entry / with the entry, on a new example
-**Prior exposure:** known: files, entries, or summaries this instance had read. Unknown: say what you can't see (preferences, compacted history, harness additions).
+**Prior exposure** *(what the writer had already taken in)*: known: files, entries, or summaries this instance had read. Unknown: say what you can't see (preferences, compacted history, harness additions).
 
 **Result:** held / failed / mixed / undecided, plus scope (one case, or n cases out of how many)
 **Evidence type:** observed output / self-report / unsupported explanation / explanation contradicted by evidence
 **Excerpt:** a short verbatim quote
 **Pointer:** where the full exchange lives
-**Capture path:** verbatim or source-derived / same-session reconstruction / post-compaction reconstruction / later recollection / unknown
-**Source status:** available and linked / preserved but inaccessible to the current reader / not preserved or unavailable / unknown
+**Capture path** *(how the event became this text)*: verbatim or source-derived / same-session reconstruction / post-compaction reconstruction / relayed account (carried by someone, with their compression on it) / later recollection / unknown
+**Source status** *(whether the original can still be checked)*: available and linked / preserved but inaccessible to the current reader / not preserved or unavailable / unknown
 
 **Harness:** code / chat / API / other
 **Tested by:** model and instance name, date
