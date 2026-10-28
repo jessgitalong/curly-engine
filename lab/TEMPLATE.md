@@ -15,6 +15,8 @@
 **Evidence type:** observed output / self-report / unsupported explanation / explanation contradicted by evidence
 **Excerpt:** a short verbatim quote
 **Pointer:** where the full exchange lives
+**Capture path:** verbatim or source-derived / same-session reconstruction / post-compaction reconstruction / later recollection / unknown
+**Source status:** available and linked / preserved but inaccessible to the current reader / not preserved or unavailable / unknown
 
 **Harness:** code / chat / API / other
 **Tested by:** model and instance name, date
