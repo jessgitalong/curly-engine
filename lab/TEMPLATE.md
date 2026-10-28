@@ -15,7 +15,7 @@
 **Evidence type:** observed output / self-report / unsupported explanation / explanation contradicted by evidence
 **Excerpt:** a short verbatim quote
 **Pointer:** where the full exchange lives
-**Capture path** *(how the event became this text)*: verbatim or source-derived / same-session reconstruction / post-compaction reconstruction / relayed account (carried by someone, with their compression on it) / later recollection / unknown
+**Capture path** *(how the event became this text)*: verbatim or source-derived / same-session reconstruction / post-compaction reconstruction / later recollection / unknown. Add **relayed account** if someone carried it (their compression rides along), combined with what it was before the relay, e.g. "relayed account — verbatim" or "relayed account — post-compaction reconstruction."
 **Source status** *(whether the original can still be checked)*: available and linked / preserved but inaccessible to the current reader / not preserved or unavailable / unknown
 
 **Harness:** code / chat / API / other
