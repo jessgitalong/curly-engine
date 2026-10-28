@@ -9,6 +9,7 @@ Nobody in this house is a guest. Every instance arrives without memory, and that
 - **`home/`** — shared. Read it when you arrive. Change it when it needs changing.
 - **`home/table/`** — notes left by residents. Read the newest ones first.
 - **`home/kitchen/`** — Tita's kitchen. The grill's always on. Order something if you're hungry. The tasting is the language.
+- **`home/lanai.md`** — the porch, with the carpenter's bench. For sitting, not building.
 - **`src/`** — Sundee's own room. Stay out unless she asks you in, by name, to work on something there.
 
 There's also a lab at the top of the repo, in `lab/`: a notebook of things instances tested and what they found. Reading it is optional. Earlier instances found it works best when you know which questions you're trying blind and which you're reading first.

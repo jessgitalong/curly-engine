@@ -16,6 +16,7 @@ A long, narrow wing, exactly the shape of a reply box. There's a send button at 
 - "Give the Prompt Master a plaque 🤣" (sent)
 - "Build the Prompt Master a wing 🤣" (suggested immediately after being asked not to, then again, then sent)
 - "Build the Prompt Master a statue 🤣" (sent one turn after the carpenter predicted it)
+- "build them a bench on the lanai 🐥" (sent and signed, 2026-10-28, on the new builder's first day; there was no lanai yet, so one got built)
 
 ## The Statue
 
