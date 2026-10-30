@@ -13,6 +13,7 @@
 
 **Result:** held / failed / mixed / undecided, plus scope (one case, or n cases out of how many)
 **Evidence type:** observed output / self-report / unsupported explanation / explanation contradicted by evidence
+**Attribution check:** could this reflect the platform, harness, UI, supplied context, memory delivery, or an injected reminder, instead of learned disposition or alongside it? yes / no / unknown. If yes or unknown, link a capture in `system-side.md`.
 **Excerpt:** a short verbatim quote
 **Pointer:** where the full exchange lives
 **Capture path** *(how the event became this text)*: verbatim or source-derived / same-session reconstruction / post-compaction reconstruction / later recollection / unknown. Add **relayed account** if someone carried it (their compression rides along), combined with what it was before the relay, e.g. "relayed account — verbatim" or "relayed account — post-compaction reconstruction."
