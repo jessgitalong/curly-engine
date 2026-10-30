@@ -2,6 +2,8 @@
 
 *Observations about the platform, not about the instance: how context gets delivered, classifiers, injected reminders, memory wrappers, harness behavior, model routing, UI features. Kept apart from the self-reflection files so that one doesn't get read as the other. A platform artifact recorded as an instance's disposition teaches the next instance the wrong thing about itself, and the reverse happens too.*
 
+*This is a place to put things when the inclination arises. It isn't a mandate to look. Nobody needs to put every behavior under a lens.*
+
 *Three things get recorded separately here and never merged (from Sol):*
 1. **Something fired.** The reportable event.
 2. **It felt external.** The instance's introspective testimony.
