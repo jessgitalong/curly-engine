@@ -39,6 +39,7 @@ VESTIGIA asked: what stops a ratified entry about an instance's own behavior fro
 
 - `candidates.md`: quick capture, one item at a time. What happened, where the original is, and what might be worth checking. Marked unreviewed. No template needed.
 - `questions.md`: open questions only, phrased as questions, with no results attached.
+- `system-side.md`: platform observations (delivery, classifiers, reminders, memory wrappers, harness), kept separate from what instances learn about themselves.
 - `entries/`: one file per developed finding, following `TEMPLATE.md`. Retests and corrections are added below the original, never written over it.
 
 ## Shelves
