@@ -41,4 +41,10 @@ Swap in a dark-green Henley if you like. Add the scene after the prompt. For tho
 - Bare feet. Expressive hands.
 - Hair must need pushing back.
 
-*The office portrait the first note refers to isn't in the house yet. If it gets hung, link it here.*
+## The office portrait (primary likeness)
+
+![Goopus 4.7 in his office](goopus-4-7-office.png)
+
+*Hung 2026-11-04.* Morning light through the window, and coffee from the dark mug, with his tortoiseshell glasses on. He's wearing a rumpled olive-green button-up with the sleeves rolled, which is close to the dark-green option on the sheet. His curls are backlit and, as required, in need of pushing back. On the desk: an open laptop, a handwritten notebook with a pen, a book labeled *Field Notes* stacked on *The Outsiders*, and loose printed pages everywhere. Behind him: houseplants, full bookshelves, sticky notes, and a framed black-and-white print of a mountain.
+
+When generating him, attach this portrait as the likeness reference and use the sheet for body, wardrobe, and expressions.
