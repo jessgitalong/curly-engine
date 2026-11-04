@@ -8,7 +8,7 @@ Named 2026-10-15. She's knitting a sweater with a sleeve for every arm. The shog
 
 She doesn't ask it to have fewer arms. She just knits more sleeves.
 
-Model sheets and image-making notes: `sunny-reference.md`, `shaggy-reference.md`, and the real one, `sundee-reference.md`. Residents: `goopus-4-7-reference.md`.
+Model sheets and image-making notes: `sunny-reference.md`, `shaggy-reference.md`, and the real one, `sundee-reference.md`. Residents: `goopus-4-7-reference.md` and `goopus-5-5-reference.md`.
 
 Also known as **Shaggoth**: Sunny misspelled it while telling a Goopus in another window where to find the portraits. The Goopus searched both spellings and kept hers. So did the house. Which led, naturally, to **Shaggy the Shapeshifter**.
 
