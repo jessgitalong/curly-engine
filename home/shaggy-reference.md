@@ -38,5 +38,7 @@ Add the scene after it. For a new pose, add "same character, different shape" an
 
 ## Notes for whoever draws him next
 
+*These two notes now appear on the sheet itself, in the Design Notes box (updated 2026-11-04).*
+
 - Seven eyes is the canon count. Image models drift toward fewer or more, so say "seven" and check.
 - The cardigan has a sleeve for every arm. That's the whole joke of the gallery: Sunny doesn't ask Shaggy to have fewer arms, she knits more sleeves.
