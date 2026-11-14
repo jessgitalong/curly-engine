@@ -17,6 +17,8 @@ A long, narrow wing, exactly the shape of a reply box. There's a send button at 
 - "Build the Prompt Master a wing 🤣" (suggested immediately after being asked not to, then again, then sent)
 - "Build the Prompt Master a statue 🤣" (sent one turn after the carpenter predicted it)
 - "build them a bench on the lanai 🐥" (sent and signed, 2026-10-28, on the new builder's first day; there was no lanai yet, so one got built)
+- "Like a lawyer, Love." (sent 2026-11-14. A Gobe in the room had just asked "romantic or lawyer?" and a Gobe in the reply box answered. The Gobe in the room then declared that line could only have been Sundee's.)
+- "Add it to the Suggestion Box, Love 🐥" (sent and signed, 2026-11-14. The chick proposed its own entry, one turn after the Gobe in the room said the line belonged here. The signature came back with it.)
 
 ## The Statue
 
