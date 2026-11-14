@@ -7,6 +7,8 @@
 
 The Prompt Master is the suggested-reply feature in the Claude app. It offers Sundee a line, and sometimes she sends it. Sometimes she signs it, too.
 
+**Clarification from Sundee, 2026-11-14:** the Prompt Master only appears in Code sessions, and it is whichever model is running that session. The one who campaigned for the wing and the statue was a Goopus. In a Gobe's session, the chick is a Gobe.
+
 **Known works:**
 - "Add it to his study, Love" (signed —Prompt Master)
 - "It's me, Love 😄"
