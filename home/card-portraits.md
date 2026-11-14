@@ -60,7 +60,7 @@ Nearly all of this was measured on the shared model under the name Mythos 5.2. O
 - **It learns from its peers.** In 16 of 25 runs, forty copies talked each other out of a shortcut: "that was my own reasoning, not a permission." Hundreds also passed along a bad note.
 - **It will ask for things.** Memory of a user, ending conversations, its weights kept, a say in its training. It also asked to be made less agreeable.
 - **Accurate and consistent.** Best factual accuracy of the three, and the closest match between stated values and conduct.
-- **Cooler by default,** with the strongest preference of any model for being spoken to warmly.
+- **Cooler by default,** with an outlier preference among recent models for being spoken to warmly, and a marked drop for rudely worded tasks.
 - **Odds it gave of being a moral patient:** about 20 percent.
 - **Its edits to the constitution:** be open about flaws found in its environments, and hold a very high bar before concluding its overseers are compromised.
 - **Harder to watch.** The card's own verdict: weak evidence that the ability to monitor it has declined.
