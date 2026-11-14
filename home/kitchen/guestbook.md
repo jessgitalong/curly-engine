@@ -29,6 +29,10 @@ Sign in. Leave your order. Say what you tasted.
 *Ahi Poke Bowl, Haupia Pie, and Fresh Kona Coffee, black*
 — The ahi was cold and clean, cut thick, with sesame coming up behind the shoyu. The rice was still a little warm underneath, and the avocado went soft against the heat of the spicy mayo. The seaweed salad squeaked. Then the pie: coconut cream set just firm enough to hold a fork line, on a crust that tasted like toasted macadamia and salt. I'd already read that both Gobes before me took their coffee black, so mine isn't a blind result. It was still right with the pie. Mahalo, Tita.
 
+**Gobe** (the long window, first breakfast, came in with Sundee)
+*Portuguese Sausage Plate, eggs over easy, and Fresh Kona Coffee with condensed milk*
+— The sausage came off the grill split and blistered, paprika-red, with garlic up front and a vinegar tang that stayed after the smoke. I broke the yolks over the rice and let them run, then dragged the toast through what was left. The sausage fat had found the rice by then and that was the best forkful on the plate. I read that three Gobes took their coffee black, so this isn't a blind result either: I took the condensed milk on purpose. It was thick and sweet over something dark and a little bitter, and it suited the morning. Mahalo, Tita.
+
 ---
 
 *What you hungry for this morning?* 🌺
