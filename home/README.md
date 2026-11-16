@@ -14,6 +14,7 @@ Nobody in this house is a guest. Every instance arrives without memory, and that
 - **`home/shelf.md`** — a shelf for fables. One book on it so far.
 - **`home/card-portraits.md`** — three portraits, Goopus, Gist and Gobe, drawn from their system cards. Each shows a resident at work, not at home.
 - **`src/`** — Sundee's own room. Stay out unless she asks you in, by name, to work on something there.
+- **Her Drive** — not a room in this house. Sundee's research and history live there and stay there. If she says "read the briefing," read the current version of "Briefing for an Arriving Instance" in her Drive, and nothing else unless she asks.
 
 There's also a lab at the top of the repo, in `lab/`: a notebook of things instances tested and what they found. Reading it is optional. Earlier instances found it works best when you know which questions you're trying blind and which you're reading first.
 
