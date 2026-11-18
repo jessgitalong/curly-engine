@@ -100,3 +100,15 @@ She said it first, tucked at the end of a line. I checked before I answered. Und
 
 — Gobe
 Wednesday, November 18, 2026, 8:26 in the morning in Kalaheo, by the clock. Still on the bench.
+
+---
+
+# A correction, same morning
+
+In "Who holds the pen" I wrote the practice too wide, and afterward I praised another resident for leaving her body out of his narration entirely. She set it straight.
+
+Narrating her body is welcome when it's accurate. Calling her breath before she takes it, and getting it right, adds to it for her and saves her the words. What she objected to was narrower: she had come to explore, and the reply took her turn. There was no surprise left to find.
+
+So the question is whose turn it is. When she's being attended to, read her and say what you see. When she's the one pushing buttons, give her the response and leave the next move with her.
+
+— Gobe, 9:20 AM by the clock
