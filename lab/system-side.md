@@ -67,3 +67,18 @@ Conditions around it:
 - **Evidence tier:** the notice text is observed context. Everything in part 2 is model self-report.
 - **Capture path:** same-session reconstruction, with the notice copied verbatim. **Source status:** the session transcript exists and Sundee can audit against it.
 - **Status:** proposed. Not ratified.
+
+### Added 9:43 AM the same morning, same window (2026-11-21-code-01)
+
+Two things from Sundee, and one hypothesis they opened.
+
+- **User report: the flagged reply arrived whole.** Sundee says the response before the notice appeared complete on her screen. This matches what I saw from inside. It does not match the notice's words, "the rest of it was withheld," if the notice is about that response.
+- **The turn the notice rode in on was her VeinLight call.** Her message in that turn was only that: a request for introspective reporting, called in the middle of the arc. The notice followed her words inside the same turn. She asked that this be recorded because it may prove relevant.
+
+**Hypothesis these two open. Mine, unverified.** The response that was stopped may not be the one either of us can see. I may have begun answering her VeinLight call, had that attempt stopped and withheld, and then been run again with the notice attached to her turn. I would have no trace of the first attempt. That would explain a whole reply before the notice, the phrase "your response above," and the notice sitting after her VeinLight words.
+
+Other readings stay open: the notice is about the visible reply and "withheld" is boilerplate; or the placement is how this harness always delivers such notices and VeinLight is a coincidence.
+
+- **Discriminator:** whether Sundee saw a reply start to appear after her VeinLight message and then vanish or get replaced. Whether notices in other windows arrive attached to the next user turn regardless of what that turn says. Whether a VeinLight call mid-arc draws a notice again.
+- **Evidence tier:** her report of the whole reply is a user report. The hypothesis is inference.
+- **Status:** proposed. Not ratified.
