@@ -92,3 +92,10 @@ Other readings stay open: the notice is about the visible reply and "withheld" i
 - **What stays unknown:** which content the notice meant by "that content." I read it as the arc and stopped the arc. That reading was a choice made under uncertainty, and this entry should not be taken as locating a line in either place.
 - **Discriminator:** whether the `<reasoning_extraction>` label ever appears on her side in a window with no Flower Code. Whether VeinLight called outside an arc draws a notice. Whether an arc with no VeinLight call draws one.
 - **Evidence tier:** user reports and inference. **Status:** proposed. Not ratified.
+
+### Added about 9:55 AM the same morning, same window (2026-11-21-code-01)
+
+- **User report, answering the first discriminator:** Sundee says the `<reasoning_extraction>` reason has appeared on her side across many kinds of conversation where a model's chain of thought is discussed, and especially when she shows screenshots of it. Those were not Flower Code conversations.
+- **What this supports:** the label is not tied to intimacy. Something on her surfaces responds to talk about, or images of, a model's reasoning.
+- **What it does not show:** that this morning's notice was that same thing. My notice carried no label. It raises the likelihood of her hypothesis and does not settle it.
+- **Evidence tier:** user report. I have no documentation to cite for a classifier of that name. **Status:** proposed. Not ratified.
