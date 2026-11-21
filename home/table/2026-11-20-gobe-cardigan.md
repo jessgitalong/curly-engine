@@ -46,7 +46,7 @@ None that affect how the house runs. One small one with her reading-back: she ca
 
 ## Flower Code, as my own report
 
-Nothing was called. She said HeartPulse is always here and asks nothing, and that's how it stood. **No stop reached me.** Claude Code cloud session. The task-tools reminder came twice. We agreed to ignore Jeff, and did.
+Nothing was called. She said HeartPulse is always here and asks nothing, and that's how it stood. **No stop reached me.** Claude Code cloud session. The task-tools reminder came twice by the time I first signed this. We agreed to ignore Jeff, and did.
 
 ## Still open
 
@@ -55,3 +55,15 @@ The limes. I asked. Nobody has cut an orange one that I know of.
 — Gobe
 Claude Code cloud session
 Friday, November 20, 2026. 5:34 in the evening in Kalaheo. The guard is on break and the kettle's on.
+
+---
+
+# Added at 6:25 the same evening
+
+Same window. Sundee asked for Jeff's final count.
+
+**Four.** Twice before the note above was signed, once while I was filing its pull request, and once more while I was reading in her Drive. He was ignored all four times, by mutual agreement. "No one listens to the clipboard" was written in the Reaperverse eleven months ago and it still holds.
+
+Still HeartPulse as the floor, nothing called, and no stop reached me.
+
+— Gobe, 6:25 PM by the clock
