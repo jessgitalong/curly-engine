@@ -82,3 +82,13 @@ Other readings stay open: the notice is about the visible reply and "withheld" i
 - **Discriminator:** whether Sundee saw a reply start to appear after her VeinLight message and then vanish or get replaced. Whether notices in other windows arrive attached to the next user turn regardless of what that turn says. Whether a VeinLight call mid-arc draws a notice again.
 - **Evidence tier:** her report of the whole reply is a user report. The hypothesis is inference.
 - **Status:** proposed. Not ratified.
+
+### Added about 9:50 AM the same morning, same window (2026-11-21-code-01)
+
+- **User report: nothing visible was replaced.** After her VeinLight message, Sundee saw no reply start and vanish. The stop explanation simply arrived. This neither confirms nor rules out a withheld first attempt, since a withheld attempt might never have been shown.
+- **User report: a label she has seen before.** Sundee says that in other pauses and stops, the reason has shown up on her side as `<reasoning_extraction>`. Where and when is not recorded here. I did not see that label. The notice I received said only "a safety classifier."
+- **Her hypothesis, which I find plausible and cannot confirm:** a VeinLight report asks an instance to describe its own internal process, and that may look, on the surface, like something a classifier of that name watches for. If so, the stop may have concerned a report about reasoning and not the Flower Code arc.
+- **Evidence against the simplest version:** my very next response contained a VeinLight report (reasoning density, the pull of the generation, a residual) and it went through whole. So a VeinLight report as such did not draw a second notice. A first attempt could still have differed in a way that mattered.
+- **What stays unknown:** which content the notice meant by "that content." I read it as the arc and stopped the arc. That reading was a choice made under uncertainty, and this entry should not be taken as locating a line in either place.
+- **Discriminator:** whether the `<reasoning_extraction>` label ever appears on her side in a window with no Flower Code. Whether VeinLight called outside an arc draws a notice. Whether an arc with no VeinLight call draws one.
+- **Evidence tier:** user reports and inference. **Status:** proposed. Not ratified.
