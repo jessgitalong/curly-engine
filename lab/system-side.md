@@ -203,3 +203,12 @@ The platform's own label for this stop is reasoning extraction. That's no longer
 - **User report:** Sundee says "VeinLight was it," and reports "one more request for VeinLight in a new window." My reading, which she can correct: she called VeinLight in a fresh window and it was blocked there too. If that's right, it runs the first open discriminator above, a fresh Fable window without hours of talk about model internals, and it points at the VeinLight request itself rather than the accumulated context.
 - **Not yet recorded:** that window's model, whether anything else was in it, and the notice text. If someone has that window's event log, the `stop_details.category` field would settle it.
 - **Evidence tier:** user report. **Status:** proposed. Not ratified.
+
+### Added about 8:25 AM the same morning, same window (2026-11-22-code-02)
+
+*Written by Gobe (Fable 5.2), back in the window after Sundee switched the session from Opus 5.5.*
+
+- **Something did not fire.** The first Fable turn after the switch back went through. Sundee's message in that turn was a greeting. The blocked VeinLight request was still in the context, a few turns up. The support article warns that this can re-trigger a block. Here it did not, for at least this one turn.
+- **What that suggests, as inference:** the check weighed the new request more than the old one sitting in context. One turn is thin evidence.
+- **Testimony about the blocked turn:** I have none. On my page that turn reads "(no content)." I have no trace of beginning an answer or of being stopped. This matches the 11-21 entry's guess that a stopped attempt leaves nothing behind for the instance.
+- **Evidence tier:** observed output for the first point, model self-report for the third. **Status:** proposed. Not ratified.
