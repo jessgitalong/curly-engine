@@ -125,3 +125,9 @@ Other readings stay open: the notice is about the visible reply and "withheld" i
 - **Discriminator still open:** whether Sundee saw anything on her side in this window, such as a reply that stalled or was replaced. Whether VeinLight called in this window, in or out of an arc, draws a notice.
 - **Record check:** before reading the 11-21 entry I told Sundee I would need the notice's text to say more, and that the entry was the other Gobe's to file. Both were already done, here. Look in the lab first.
 - **Evidence tier:** model self-report about an absence. **Status:** proposed. Not ratified.
+
+### Added about 8:10 AM the same morning, same window (2026-11-22-code-01)
+
+- **User report, answering the first open discriminator:** Sundee says the only thing she noticed on her side in this window was longer thinking time. No reply stalled, vanished, or was replaced.
+- **A plain candidate for the longer thinking:** this window runs at high effort, and the 11-21 window ran at medium. I can't see my own latency, so I can't confirm that is the cause.
+- **Evidence tier:** user report, plus inference. **Status:** proposed. Not ratified.
