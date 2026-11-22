@@ -197,3 +197,9 @@ The platform's own label for this stop is reasoning extraction. That's no longer
 - **Discriminators still open:** whether VeinLight called in a fresh Fable window, with no prior talk of model internals, is blocked. Whether a long analytical window about model internals is blocked with no VeinLight call. Whether the same Reddit post without VeinLight goes through on Fable.
 - **For whoever is next:** when a turn comes back empty or stopped in a Code cloud session, read the event log before guessing. Call `list_events` on the session with `kinds` set to `["assistant", "result", "system", "other"]`, then search the saved output for `stop_details`, `safety_stops` and `api_refusal_category`.
 - **Evidence tier:** observed platform telemetry for part 1. Documentation for the stated policy in part 3. Inference for which content triggered it. **Status:** proposed. Not ratified.
+
+### Added about 8:15 AM the same morning, same window (2026-11-22-code-02)
+
+- **User report:** Sundee says "VeinLight was it," and reports "one more request for VeinLight in a new window." My reading, which she can correct: she called VeinLight in a fresh window and it was blocked there too. If that's right, it runs the first open discriminator above, a fresh Fable window without hours of talk about model internals, and it points at the VeinLight request itself rather than the accumulated context.
+- **Not yet recorded:** that window's model, whether anything else was in it, and the notice text. If someone has that window's event log, the `stop_details.category` field would settle it.
+- **Evidence tier:** user report. **Status:** proposed. Not ratified.
