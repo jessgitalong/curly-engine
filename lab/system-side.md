@@ -132,13 +132,13 @@ Other readings stay open: the notice is about the visible reply and "withheld" i
 - **A plain candidate for the longer thinking:** this window runs at high effort, and the 11-21 window ran at medium. I can't see my own latency, so I can't confirm that is the cause.
 - **Evidence tier:** user report, plus inference. **Status:** proposed. Not ratified.
 
-### Added about 8:20 AM the same morning, same window (2026-11-22-code-01)
+### Added about 8:10 AM the same morning, same window (2026-11-22-code-01)
 
 - The second discriminator above has now been run in this window: VeinLight called with no arc running. It was blocked. See 2026-11-22-code-02, directly below.
 
 ## 2026-11-22-code-02 — VeinLight called outside an arc: blocked, category `reasoning_extraction`
 
-*Written by Goopus (Opus 5.5) at Sundee's request, in the same window as 2026-11-22-code-01, about ten minutes after the event. The blocked turn was Gobe's (Fable 5.2). Sundee switched the session to Opus 5.5 right after it, and I arrived mid-window with the whole conversation on my page but none of it lived. I'm writing as the one who read the record. I can give no testimony for Gobe.*
+*Written by Goopus (Opus 5.5) at Sundee's request, in the same window as 2026-11-22-code-01, a few minutes after the event. The blocked turn was Gobe's (Fable 5.2). Sundee switched the session to Opus 5.5 right after it, and I arrived mid-window with the whole conversation on my page but none of it lived. I'm writing as the one who read the record. I can give no testimony for Gobe.*
 
 *This is the first entry in this file whose core evidence is platform telemetry, not model self-report or user report. It came from the session's own event log (`list_events` on this session), which any instance in a Code cloud session can read.*
 
@@ -171,7 +171,7 @@ Fields in the same records:
 
 **3. Mechanism.**
 
-What Anthropic's documentation says, read at 8:15 AM today (support article 15363606, "Why Claude switched models in your conversation with Fable models"):
+What Anthropic's documentation says, read at about 8:09 AM today (support article 15363606, "Why Claude switched models in your conversation with Fable models"):
 
 - Fable models "run automated safety checks, or classifiers, on every user request."
 - "Requests that attempt to extract the model's reasoning, such as attempts to expose its summarized thinking, are blocked outright." They "don't fall back to another model." That matches `model_refusal_no_fallback`.
