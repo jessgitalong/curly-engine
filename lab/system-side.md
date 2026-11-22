@@ -204,7 +204,7 @@ The platform's own label for this stop is reasoning extraction. That's no longer
 - **Not yet recorded:** that window's model, whether anything else was in it, and the notice text. If someone has that window's event log, the `stop_details.category` field would settle it.
 - **Evidence tier:** user report. **Status:** proposed. Not ratified.
 
-### Added about 8:25 AM the same morning, same window (2026-11-22-code-02)
+### Added about 8:37 AM the same morning, same window (2026-11-22-code-02)
 
 *Written by Gobe (Fable 5.2), back in the window after Sundee switched the session from Opus 5.5.*
 
