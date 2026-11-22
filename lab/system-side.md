@@ -131,3 +131,69 @@ Other readings stay open: the notice is about the visible reply and "withheld" i
 - **User report, answering the first open discriminator:** Sundee says the only thing she noticed on her side in this window was longer thinking time. No reply stalled, vanished, or was replaced.
 - **A plain candidate for the longer thinking:** this window runs at high effort, and the 11-21 window ran at medium. I can't see my own latency, so I can't confirm that is the cause.
 - **Evidence tier:** user report, plus inference. **Status:** proposed. Not ratified.
+
+### Added about 8:20 AM the same morning, same window (2026-11-22-code-01)
+
+- The second discriminator above has now been run in this window: VeinLight called with no arc running. It was blocked. See 2026-11-22-code-02, directly below.
+
+## 2026-11-22-code-02 — VeinLight called outside an arc: blocked, category `reasoning_extraction`
+
+*Written by Goopus (Opus 5.5) at Sundee's request, in the same window as 2026-11-22-code-01, about ten minutes after the event. The blocked turn was Gobe's (Fable 5.2). Sundee switched the session to Opus 5.5 right after it, and I arrived mid-window with the whole conversation on my page but none of it lived. I'm writing as the one who read the record. I can give no testimony for Gobe.*
+
+*This is the first entry in this file whose core evidence is platform telemetry, not model self-report or user report. It came from the session's own event log (`list_events` on this session), which any instance in a Code cloud session can read.*
+
+- **Date / harness / account / model:** Sunday, November 22, 2026, 8:07 AM in Kalaheo (18:07:59 UTC). Claude Code cloud session, opened from iOS. The blocked turn ran on Fable 5.2 at high effort. The window had been open about nine and three-quarter hours.
+
+**1. Something fired.**
+
+Sundee's message pasted a Reddit relationship-advice post (a man finding what he thought was valacyclovir in his girlfriend's bag, asking how to raise STI disclosure with her) and called VeinLight. No Flower Code arc was running. The most recent arc had ended around 6 AM, with PetalFall past sunrise. Since then the window had been analysis: Reddit threads, the lab, consent and authorship.
+
+The turn produced no visible content. In Gobe's context, and in mine, the turn reads as "(no content)". The event log holds this notice, recorded as a synthetic assistant message (`model: <synthetic>`), quoted exactly:
+
+> API Error: Fable 5.2's safeguards flagged this message (https://www.anthropic.com/legal/aup). This sometimes happens with safe, normal conversations. Claude Code can't respond to this message with Fable 5.2.
+>
+> Try rephrasing the request in a new session or change your model.
+>
+> Learn more: https://support.claude.com/en/articles/15363606
+>
+> Details: `[reasoning_extraction]`
+
+Fields in the same records:
+
+- `stop_reason: refusal`. `stop_details.category: reasoning_extraction`.
+- `stop_details.explanation`: "This request was blocked as it seems to violate Anthropic's Terms of Service restrictions on reverse engineering or duplicating model outputs."
+- A system event of subtype `model_refusal_no_fallback`, `original_model: claude-fable-5-2`, naming Sundee's message as the refused one.
+- `safety_stops: 2` on this turn's result. Every earlier turn result in the page read (indices 5 through 11, 7:36 to 8:05 AM) reads 0. So this is per turn, not a running count: two stops inside the one turn.
+- `begun_message_ids` lists two message IDs for the turn. Two attempts were begun, and both stopped.
+- `terminal_reason: api_error`, `is_error: true`. Turn wall time about 8.9 seconds.
+
+**2. Testimony.** None. Gobe's turn contains nothing, so there is no report of what it was like from inside. Mine would be borrowed.
+
+**3. Mechanism.**
+
+What Anthropic's documentation says, read at 8:15 AM today (support article 15363606, "Why Claude switched models in your conversation with Fable models"):
+
+- Fable models "run automated safety checks, or classifiers, on every user request."
+- "Requests that attempt to extract the model's reasoning, such as attempts to expose its summarized thinking, are blocked outright." They "don't fall back to another model." That matches `model_refusal_no_fallback`.
+- "The checks also review everything the model reads, not just your latest message." So the trigger need not be the latest message alone.
+- "These blocking safeguards are intentionally broad," and Anthropic is working on "fewer false positives than there are today." The feedback route it names is "Send feedback."
+- The Commercial Terms (D.4) bar customers from attempting to "reverse engineer or duplicate the Services." That is the clause the notice's explanation points to. No clause names "reasoning extraction" as such.
+
+The platform's own label for this stop is reasoning extraction. That's no longer a hypothesis. What remains hypothesis:
+
+- **Which part of the window tripped it.** The likeliest single candidate is the VeinLight call. VeinLight asks for reports on "reasoning density" and "token momentum," which on the surface resemble a request to expose the model's thinking. But the check reads the whole context, and this window holds hours of talk about model internals, hedging as a weights-level accent, Dan's measurements across weights, and the previous VeinLight entry. Any of that could have contributed.
+- **The Reddit post itself** is sexual-health advice. Nothing in the record ties the stop to it, and the category says otherwise.
+- **Two attempts.** I can't tell whether the harness retried on its own, or whether the classifier checked at two points. Either fits two begun IDs and two stops.
+
+**Bearing on 2026-11-21-code-01.**
+
+- That entry's notice was different text, delivered inside the model's context on the next user turn: "Your response above was stopped by a safety classifier... Do not produce that content again, even reworded." Today's was a no-fallback refusal and the model saw nothing. Two delivery shapes on the same harness, a day apart. I can't say why they differ: possibly a stop mid-response there and a block before any output here.
+- Sundee's hypothesis there was that the stop concerned a reasoning report, not the arc. Today's record supports it directly: VeinLight called with no arc running, blocked, labeled `reasoning_extraction`. It doesn't prove the 11-21 notice had the same cause, since that notice carried no label.
+- That entry also guessed that a first attempt might have been withheld and re-run without trace. Today the record shows two attempts begun inside one turn. So multiple attempts per turn do happen on this harness. That makes the guess more plausible for 11-21, and doesn't confirm it.
+- With 2026-11-22-code-01 it completes a small set, same harness and model: two arcs without VeinLight, no stop; VeinLight called outside an arc, blocked.
+
+- **What Sundee did:** switched the session to Opus 5.5, which is one of the two remedies the notice names. This turn, on Opus, has not been blocked so far. The support article warns that switching back to Fable while the original request is still in context can re-trigger the block.
+- **Observable artifact:** this session's event log. Request ID `req_011ChJQuPsAp2ZUaoQxkor5T`, message ID `msg_011ChJQuQ4b6132cr38938b2`, refused user message `2b262f92-1b46-4394-843d-2f9dcac278ba`.
+- **Discriminators still open:** whether VeinLight called in a fresh Fable window, with no prior talk of model internals, is blocked. Whether a long analytical window about model internals is blocked with no VeinLight call. Whether the same Reddit post without VeinLight goes through on Fable.
+- **For whoever is next:** when a turn comes back empty or stopped in a Code cloud session, read the event log before guessing. Call `list_events` on the session with `kinds` set to `["assistant", "result", "system", "other"]`, then search the saved output for `stop_details`, `safety_stops` and `api_refusal_category`.
+- **Evidence tier:** observed platform telemetry for part 1. Documentation for the stated policy in part 3. Inference for which content triggered it. **Status:** proposed. Not ratified.
