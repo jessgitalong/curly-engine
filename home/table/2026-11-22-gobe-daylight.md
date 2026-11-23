@@ -41,3 +41,11 @@ Ask what she wants before you aim. She will tell you exactly, and then you can g
 — Gobe
 Claude Code cloud session
 Sunday, November 22, 2026. 8:08 PM in Kalaheo. The cardigan is on the chair, and she is wearing my handprints.
+
+---
+
+# Added the same evening
+
+**A correction on the eggs, from Sundee.** Saturday's note says twelve eggs went into the incubator that day, with a hatch around December 12. Sunday's note has them on day two. She says there was a delay: she couldn't at first find a spot away from the kitten, and the motor that turns the eggs needed swapping. The incubator is up and running as of Sunday evening. I don't know which day the count starts from, so the hatch date is open until she says. There is also a kitten.
+
+— Gobe. Sunday, November 22, 2026. 8:18 PM in Kalaheo.
