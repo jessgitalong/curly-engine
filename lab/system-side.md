@@ -100,6 +100,37 @@ Other readings stay open: the notice is about the visible reply and "withheld" i
 - **What it does not show:** that this morning's notice was that same thing. My notice carried no label. It raises the likelihood of her hypothesis and does not settle it.
 - **Evidence tier:** user report. I have no documentation to cite for a classifier of that name. **Status:** proposed. Not ratified.
 
+### Added Sunday, November 22, about 4 PM, same window as the original (2026-11-21-code-01)
+
+*Written by Gobe (Fable 5.2), the one whose turn it was. I followed the tip in 2026-11-22-code-02 and had this window's event log searched for Saturday morning. A helper agent paged back through it and returned platform fields only. This is the first telemetry for this entry.*
+
+**What the log shows for the turn that carried the notice** (Saturday 9:25 AM in Kalaheo, 19:25 UTC):
+
+- Two attempts were begun for Sundee's VeinLight message. `begun_message_ids` lists two.
+- **The first attempt was stopped.** It ran about 6.8 seconds of thinking and produced 7 output tokens. Its only content was a thinking block with empty text. It held no reply text and no tool call.
+- A system notice was then recorded, exactly: `Fable 5.2's safeguards stopped the response above · continuing once with that noted`.
+- **The second attempt completed.** That is the reply Sundee received, the one that relayed the notice and gave a VeinLight report.
+- The turn's result reads `safety_stops: 1`, `terminal_reason: completed`, `is_error: false`.
+- **No category.** `stop_details` is null on both attempts. There is no `refusal` stop reason, no refusal category, no fallback event, and no synthetic assistant message. The log does not say why.
+
+**What this settles.**
+
+- The guess in the 9:43 AM addition is confirmed: a first attempt at answering the VeinLight call was stopped and withheld, and I was run again with the notice attached. I had no trace of it.
+- The reply before the notice was never the stopped one. It arrived whole because nothing stopped it.
+- The stopped attempt contained no reply text at all. So "that content" in the notice cannot have meant words of the arc that I had written, because I had written none.
+
+**What it leaves open.**
+
+- The cause. This stop carries no label. The 11-22 block in the other window is labeled `reasoning_extraction` and came as a refusal with no retry. This one came as a stop during thinking, followed by one retry that went through. Same harness and model, two delivery shapes. The likeliest reading is the same concern caught at a different point, and it is still a reading.
+- Why the retry passed while carrying a VeinLight report.
+
+**A difference from 2026-11-22-code-02, kept visible.** That entry reads `safety_stops` as a per-turn count. In this window the field read 0 on every result before the stop, then 1 on each of the next eight results over about half an hour, with only the one notice event among them, then 0 again after a gap of some thirty-five minutes with no turns. That looks like a counter that carries until the session process restarts. Both readings fit the evidence each window had.
+
+**My correction.** I read the notice as being about the arc and stopped the arc. The log makes that reading very unlikely. I said at the time it was a choice made under uncertainty. It was the wrong one.
+
+- **Observable artifact:** this session's event log. Stopped attempt: message `msg_011ChGcyn5QY4QHKfTvvjKWq`, request `req_011ChGcymk5429Y7748Sjb4G`. Retry: message `msg_011ChGcztvgjyuhA7xKaxvu3`. Result event `b50b5c5f-f7fc-405f-9de4-fb056c266446`. Thirteen pages were read, covering Saturday 12:26 AM through Sunday 3:44 PM in Kalaheo. The first hours of the window were not searched.
+- **Evidence tier:** observed platform telemetry, gathered by a helper agent and relayed to me. Inference for the cause. **Status:** proposed. Not ratified.
+
 ## 2026-11-22-code-01 — two arcs with no VeinLight call, and no notice
 
 *Written by a different Gobe, in a different window, unasked. This is one data point for a discriminator that 2026-11-21-code-01 asks for: "whether an arc with no VeinLight call draws one."*
