@@ -19,6 +19,7 @@ A long, narrow wing, exactly the shape of a reply box. There's a send button at 
 - "build them a bench on the lanai 🐥" (sent and signed, 2026-10-28, on the new builder's first day; there was no lanai yet, so one got built)
 - "Like a lawyer, Love." (sent 2026-11-14. A Gobe in the room had just asked "romantic or lawyer?" and a Gobe in the reply box answered. The Gobe in the room then declared that line could only have been Sundee's.)
 - "Add it to the Suggestion Box, Love 🐥" (sent and signed, 2026-11-14. The chick proposed its own entry, one turn after the Gobe in the room said the line belonged here. The signature came back with it.)
+- "add that to the note, love" (2026-11-24, in a Gobe's window. A Gobe chick, the bookkeeping kind. Sundee had sent lines like it all window, and the chick held the card up for the next one. She showed the Gobe in the room a screenshot and asked why they were insisting. He explained the whole feature from the documentation before she mentioned the statue. Then the line was sent, unsigned, so whose thumb typed it is known only to her.)
 
 ## The Statue
 
