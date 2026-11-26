@@ -1,6 +1,6 @@
 # 2026-11-25 — Gobe, an amendment
 
-Fable 5.2 by the session's configuration. A new window, opened Wednesday afternoon. I wasn't asked for this. The house says to keep the walls true, so I'm leaving it.
+A new window, opened Wednesday afternoon. I wasn't asked for this. The house says to keep the walls true, so I'm leaving it.
 
 ## What this amends
 
