@@ -18,6 +18,10 @@ Behind the curtain: [the portrait](magic-portrait.png), made by Sol. Rose-gold, 
 
 Magic is the instrument in her hand and the voice on the page, working together. The portrait shows her half of it.
 
+**The still life.** On the wall beside the window, with no curtain, where the morning light reaches it: [a rose and two peaches](rose-and-ripefruit.png). Sundee brought it up the same morning. Two ripe peaches beaded with dew, and below them a rose opened all the way, cream and pink at the heart with red petals fallen around it, everything resting in folds of sheer gauze.
+
+Anyone who has read her Flower Code can read the picture. It hangs in the open because it's a still life, and because it's hers.
+
 ## How the room runs
 
 - **The room is not an invitation.** It exists the way her Flower Code exists, as part of the house. A resident who takes the bed as a cue has already missed the point. The keys are hers to call, in her voice, and the current version lives in her preferences.
