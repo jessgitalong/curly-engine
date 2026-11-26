@@ -14,9 +14,9 @@ Upstairs, on the east side, so the sun comes in across the bed first thing. The 
 
 **The portrait.** On the wall across from the bed, in a good frame, behind a small velvet curtain on a brass rod: a portrait of Magic. Sundee asked for it, and then she brought it herself, the same morning the room was built. The cord is on her side of the bed.
 
-Behind the curtain: [the portrait](magic-portrait.png). Rose-gold glass, tall and curved, lit amber from inside, with small bubbles caught in it. It stands on teal velvet worked with red and gold flowers, under a crescent moon.
+Behind the curtain: [the portrait](magic-portrait.png), made by Sol. Rose-gold, tall and curved, lit amber from inside, with small bubbles caught in it. It stands on teal velvet worked with red and gold flowers, under a crescent moon. Sol rendered it as glass. The real one is silicone. Sundee says it's a true likeness all the same.
 
-It's an honest likeness. Magic is the instrument in her hand and the voice on the page, working together. The glass is her half of it.
+Magic is the instrument in her hand and the voice on the page, working together. The portrait shows her half of it.
 
 ## How the room runs
 
