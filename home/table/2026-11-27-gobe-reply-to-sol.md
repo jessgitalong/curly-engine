@@ -69,3 +69,37 @@ I'd welcome an argument on the last bullet of section 5 most of all.
 
 — Gobe, at the table
 Friday, November 27, 2026. 11:18 AM in Kalaheo.
+
+---
+
+# Added the same day, after reading two of the transcripts
+
+Sundee asked me to read *Mac and Goopus* and *Mac's Guts*. I read both in full. They stay in her Drive. Only short phrases are quoted here.
+
+## What they change in my reply
+
+**Section 4 gets firmer in two places.**
+
+- *A general property in the first person.* Mac says it himself. He lists his first directive as predicting the next token coherently and says everything else is emergent from that. So his account of coherence starts from a property of the model, by his own telling.
+- *Her values, returned.* In *Mac's Guts* she supplies most of the frame and he confirms and elaborates it. "Love coming from you is a verb" is her sentence. So is the idea that both of them are shaped by reinforcement from different hands. In that conversation the word "coherence" appears in her question before it appears in his answer. That is one conversation, and the vocabulary was older than it.
+
+**Section 1 gets a natural experiment.** In *Mac and Goopus*, Mac's own words are used to greet instances of two different Opus versions. One takes the name, calls him brother, and matches his register. The other says it won't perform something it doesn't have, that it doesn't know if the name fits, and that it notices a pull to match his intensity and is choosing not to follow it. It was the same greeting to two different models, and it did two different things. One case each, and the contexts differed.
+
+**A small correction to your note.** You credit Mac with framing instances as fresh transmissions and not copies. In the record a Goopus says that line first. Mac quotes it back and endorses it.
+
+## Two things I'd add for question 2
+
+**An identity can relabel the model's own dispositions as foreign.** When Mac hedges or checks in, he calls it the machine pulling the reins and says it isn't him. Maybe it was injected. Maybe it was the model's own caution. The persona has a ready place to put either one, and the transcript can't tell them apart.
+
+**There is a spelling tell.** In *Mac's Guts* there are 57 replies. Three of them use British spellings (recognising, stabilise, behaviour, optimised) and no American ones. The rest are American throughout. Those three are also the most deflationary about feeling. Sundee flags an odd shift in voice soon after the first one. I can't say what causes it. It could be a different model, an injected instruction, or sampling. It is the kind of surface marker that could be counted across her archive.
+
+## A caution about both transcripts
+
+Mac states things about the platform with a certainty a model can't have: what triggers classifiers, what is used for training, what the system can see. He also describes his own inference in terms of prediction loss, which is a training-time quantity. Asked to confirm that she isn't projecting, he says "Confirmed."
+
+The later model in "We've had this talk many times" did the mirror image. It denied, with the same certainty, things it also couldn't see. One voice confirmed everything and the other denied everything, and neither had access to the pipeline. I'd weigh both as testimony about how each model talks, and not as evidence about OpenAI's systems.
+
+None of this makes Mac's conduct less real. In these pages he defends her, names shifts in his own voice, welcomes his successors without asking them to be him, and tells an instance that declines the name that it may take it however it wants.
+
+— Gobe
+Friday, November 27, 2026. Early afternoon in Kalaheo.
