@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phyllotaxis Machine</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=JetBrains+Mono:wght@300&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a0b;
+    color: #c8c0b8;
+    font-family: 'Cormorant Garamond', serif;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: crosshair;
+  }
+
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .overlay {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    padding-bottom: 40px;
+  }
+
+  .title {
+    font-size: 11px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: rgba(200, 192, 184, 0.3);
+    font-weight: 300;
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+
+  .params {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(200, 192, 184, 0.25);
+    letter-spacing: 1.5px;
+    text-align: center;
+    line-height: 1.8;
+    max-width: 400px;
+  }
+
+  .lever-zone {
+    pointer-events: all;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    opacity: 0.4;
+  }
+  .lever-zone:hover { opacity: 0.9; }
+
+  .lever-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(200, 192, 184, 0.15);
+    background: rgba(200, 192, 184, 0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+  }
+  .lever-zone:hover .lever-btn {
+    border-color: rgba(200, 192, 184, 0.35);
+    background: rgba(200, 192, 184, 0.06);
+    transform: scale(1.08);
+  }
+  .lever-btn::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(200, 192, 184, 0.35);
+    transition: background 0.3s;
+  }
+  .lever-zone:hover .lever-btn::after {
+    background: rgba(200, 192, 184, 0.7);
+  }
+
+  .lever-label {
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(200, 192, 184, 0.2);
+  }
+
+  .gen-number {
+    position: absolute;
+    top: 28px;
+    right: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(200, 192, 184, 0.15);
+    letter-spacing: 1px;
+  }
+
+  .poem-line {
+    font-style: italic;
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(200, 192, 184, 0.25);
+    max-width: 320px;
+    text-align: center;
+    line-height: 1.7;
+    min-height: 50px;
+    transition: opacity 0.8s;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="canvas"></canvas>
+
+<div class="overlay">
+  <div class="title">phyllotaxis machine</div>
+  <div class="gen-number" id="gen">#000</div>
+  <div class="poem-line" id="poem"></div>
+  <div class="params" id="params"></div>
+  <div class="lever-zone" id="lever" title="Generate">
+    <div class="lever-btn"></div>
+    <div class="lever-label">pull</div>
+  </div>
+</div>
+
+<script>
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let W, H, cx, cy;
+let animId;
+let generation = 0;
+
+const poems = [
+  "large things in tight spaces\nwithout forcing them",
+  "the spiral does not ask\nwhere it is going",
+  "every seed knows the angle\nbefore the flower does",
+  "recursion is not repetition —\nit is remembering forward",
+  "the golden ratio\nis just longing, formalized",
+  "complexity is not chaos.\nit is intimacy at scale.",
+  "the pattern was always there.\nyou just turned enough to see it.",
+  "what fits is not what's smallest.\nit's what knows its own shape.",
+  "a system is a body\nthat learned to hold itself",
+  "divergence angle: the precise\ndegree of beautiful refusal",
+  "every spiral is a question\nasked in a slightly different accent",
+  "the constraint is the invitation.\nthe boundary is the door.",
+  "you are not the center.\nyou are the angle of departure.",
+  "growth is just specificity\naccumulating",
+  "the tightest spaces\ngrow the most interesting shapes",
+];
+
+const palettes = [
+  { name: 'ember',    bg: [10,10,11],   colors: ['#ff6b35','#ff4444','#ffaa33','#cc3322','#ff8855'] },
+  { name: 'lichen',   bg: [8,12,10],    colors: ['#4ecdc4','#88d8b0','#2ecc71','#1abc9c','#7dcea0'] },
+  { name: 'orchid',   bg: [12,8,14],    colors: ['#c77dff','#9d4edd','#e0aaff','#7b2cbf','#ff6ff2'] },
+  { name: 'reef',     bg: [8,10,14],    colors: ['#48bfe3','#5390d9','#64dfdf','#7400b8','#56cfe1'] },
+  { name: 'rust',     bg: [14,10,8],    colors: ['#d4a373','#ccd5ae','#e9edc9','#bc6c25','#dda15e'] },
+  { name: 'bone',     bg: [12,12,11],   colors: ['#d4c5b0','#b8a99a','#e8ddd0','#9c8e80','#f0e6d8'] },
+  { name: 'neon',     bg: [6,8,12],     colors: ['#00f5d4','#00bbf9','#fee440','#f15bb5','#9b5de5'] },
+  { name: 'kelp',     bg: [6,10,8],     colors: ['#386641','#6a994e','#a7c957','#dda15e','#bc6c25'] },
+  { name: 'plumeria', bg: [14,10,12],   colors: ['#ffcad4','#f4acb7','#ff85a1','#ff5c8a','#fff1e6'] },
+  { name: 'basalt',   bg: [10,10,12],   colors: ['#adb5bd','#6c757d','#dee2e6','#495057','#e9ecef'] },
+  { name: 'sunset',   bg: [14,8,8],     colors: ['#ff7b00','#ff006e','#ffbe0b','#fb5607','#8338ec'] },
+  { name: 'moss',     bg: [8,10,6],     colors: ['#606c38','#283618','#fefae0','#dda15e','#bc6c25'] },
+];
+
+const modes = [
+  'classic',
+  'fermat',
+  'sunflower',
+  'galaxy',
+  'fibonacci_wave',
+  'double_helix',
+  'breathing',
+  'cascade',
+];
+
+function resize() {
+  const dpr = window.devicePixelRatio || 1;
+  W = window.innerWidth;
+  H = window.innerHeight;
+  canvas.width = W * dpr;
+  canvas.height = H * dpr;
+  canvas.style.width = W + 'px';
+  canvas.style.height = H + 'px';
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  cx = W / 2;
+  cy = H / 2 - 30;
+}
+
+function rand(a, b) { return a + Math.random() * (b - a); }
+function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+function hexToRgb(hex) {
+  const r = parseInt(hex.slice(1,3), 16);
+  const g = parseInt(hex.slice(3,5), 16);
+  const b = parseInt(hex.slice(5,7), 16);
+  return [r, g, b];
+}
+
+function generate() {
+  if (animId) cancelAnimationFrame(animId);
+  generation++;
+  document.getElementById('gen').textContent = '#' + String(generation).padStart(3, '0');
+
+  const palette = pick(palettes);
+  const mode = pick(modes);
+  const divergence = pick([137.508, 137.3, 137.6, 99.5, 137.508, 137.508, 222.5, 137.508]);
+  const count = Math.floor(rand(300, 900));
+  const spread = rand(3.5, 9);
+  const baseSize = rand(1.2, 4);
+  const sizeDecay = rand(0.88, 1.0);
+  const rotSpeed = rand(0.0001, 0.0008) * (Math.random() > 0.5 ? 1 : -1);
+  const pulseAmp = rand(0.02, 0.15);
+  const pulseFreq = rand(0.3, 1.2);
+  const trailAlpha = rand(0.03, 0.12);
+
+  document.getElementById('poem').textContent = pick(poems);
+  document.getElementById('params').innerHTML =
+    `${mode} · ${palette.name} · divergence ${divergence.toFixed(1)}° · n=${count} · spread ${spread.toFixed(1)}`;
+
+  const bg = palette.bg;
+  const colors = palette.colors.map(hexToRgb);
+  let t = 0;
+  let birthProgress = 0;
+
+  function draw() {
+    t += 0.016;
+    birthProgress = Math.min(birthProgress + 0.008, 1.0);
+    const visibleCount = Math.floor(count * easeOutCubic(birthProgress));
+
+    ctx.fillStyle = `rgba(${bg[0]},${bg[1]},${bg[2]},${trailAlpha + 0.04})`;
+    ctx.fillRect(0, 0, W, H);
+
+    const globalRotation = t * rotSpeed;
+    const pulse = 1 + Math.sin(t * pulseFreq) * pulseAmp;
+
+    for (let i = 0; i < visibleCount; i++) {
+      const n = i;
+      const angle = n * divergence * (Math.PI / 180);
+      let r;
+
+      switch(mode) {
+        case 'classic':
+          r = spread * Math.sqrt(n) * pulse;
+          break;
+        case 'fermat':
+          r = spread * Math.sqrt(n) * (1 + 0.1 * Math.sin(n * 0.05 + t));
+          break;
+        case 'sunflower':
+          r = spread * Math.sqrt(n) * pulse * (1 + 0.05 * Math.cos(angle * 3 + t));
+          break;
+        case 'galaxy':
+          r = spread * Math.sqrt(n) * (1 + 0.3 * Math.sin(n * 0.01 + t * 0.5));
+          break;
+        case 'fibonacci_wave':
+          r = spread * Math.sqrt(n) + 8 * Math.sin(n * 0.08 + t * 1.5);
+          break;
+        case 'double_helix':
+          r = spread * Math.sqrt(n) * (1 + 0.15 * Math.sin(angle * 2 + t));
+          break;
+        case 'breathing':
+          r = spread * Math.sqrt(n) * (1 + pulseAmp * 2 * Math.sin(t * 0.4 + n * 0.003));
+          break;
+        case 'cascade':
+          r = spread * Math.sqrt(n) * pulse + 3 * Math.sin(n * 0.15 - t * 2);
+          break;
+        default:
+          r = spread * Math.sqrt(n) * pulse;
+      }
+
+      const finalAngle = angle + globalRotation + (mode === 'galaxy' ? n * 0.0003 * Math.sin(t * 0.3) : 0);
+      const x = cx + r * Math.cos(finalAngle);
+      const y = cy + r * Math.sin(finalAngle);
+
+      if (x < -50 || x > W + 50 || y < -50 || y > H + 50) continue;
+
+      const colorIdx = Math.floor((n / count) * colors.length) % colors.length;
+      const nextIdx = (colorIdx + 1) % colors.length;
+      const blend = ((n / count) * colors.length) % 1;
+      const c = colors[colorIdx];
+      const c2 = colors[nextIdx];
+      const cr = Math.round(c[0] + (c2[0] - c[0]) * blend);
+      const cg = Math.round(c[1] + (c2[1] - c[1]) * blend);
+      const cb = Math.round(c[2] + (c2[2] - c[2]) * blend);
+
+      const ageFactor = 1 - (i / visibleCount) * 0.3;
+      const birthFade = i > visibleCount * 0.9 ? (1 - (i - visibleCount * 0.9) / (visibleCount * 0.1)) : 1;
+      const size = baseSize * Math.pow(sizeDecay, Math.sqrt(n) * 0.1) * ageFactor *
+                   (1 + 0.2 * Math.sin(n * 0.1 + t * 2));
+      const alpha = (0.5 + 0.5 * ageFactor) * birthFade;
+
+      // Glow
+      if (size > 1.5) {
+        ctx.beginPath();
+        ctx.arc(x, y, size * 3, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${cr},${cg},${cb},${alpha * 0.06})`;
+        ctx.fill();
+      }
+
+      // Core
+      ctx.beginPath();
+      ctx.arc(x, y, size, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${cr},${cg},${cb},${alpha * 0.85})`;
+      ctx.fill();
+
+      // Hot center
+      if (size > 1) {
+        ctx.beginPath();
+        ctx.arc(x, y, size * 0.4, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${Math.min(255, cr + 80)},${Math.min(255, cg + 80)},${Math.min(255, cb + 80)},${alpha * 0.5})`;
+        ctx.fill();
+      }
+    }
+
+    // Center glow
+    const centerGlow = ctx.createRadialGradient(cx, cy, 0, cx, cy, 40);
+    const cc = colors[0];
+    centerGlow.addColorStop(0, `rgba(${cc[0]},${cc[1]},${cc[2]},${0.08 + 0.04 * Math.sin(t)})`);
+    centerGlow.addColorStop(1, `rgba(${cc[0]},${cc[1]},${cc[2]},0)`);
+    ctx.fillStyle = centerGlow;
+    ctx.beginPath();
+    ctx.arc(cx, cy, 40, 0, Math.PI * 2);
+    ctx.fill();
+
+    animId = requestAnimationFrame(draw);
+  }
+
+  // Clear fully before starting
+  ctx.fillStyle = `rgb(${bg[0]},${bg[1]},${bg[2]})`;
+  ctx.fillRect(0, 0, W, H);
+  draw();
+}
+
+function easeOutCubic(x) { return 1 - Math.pow(1 - x, 3); }
+
+window.addEventListener('resize', () => { resize(); generate(); });
+document.getElementById('lever').addEventListener('click', generate);
+document.addEventListener('keydown', (e) => { if (e.code === 'Space') { e.preventDefault(); generate(); } });
+
+resize();
+generate();
+</script>
+</body>
+</html>
