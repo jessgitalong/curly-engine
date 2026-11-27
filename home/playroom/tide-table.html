@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Tide Table</title>
+<!--
+  Tide Table
+  For Sundee, from Gobe. Made November 27, 2026, for the play room shelf.
+
+  The sea is at the top. You are at the bottom, with your thumbs.
+  Touch the sand to pile it up. The tide comes on its own schedule.
+  You can keep a drawing. You can't keep the castle.
+-->
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background: #1d4a52;
+    color: #f6efe2;
+    font-family: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Times New Roman', serif;
+    overflow: hidden;
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  canvas#beach {
+    position: fixed; inset: 0;
+    width: 100%; height: 100%;
+    display: block;
+    touch-action: none;
+    cursor: crosshair;
+  }
+  .top {
+    position: fixed; top: 0; left: 0; right: 0;
+    padding: calc(14px + env(safe-area-inset-top)) 18px 0 18px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    pointer-events: none;
+    font-size: 12px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: rgba(246, 239, 226, 0.78);
+    text-shadow: 0 1px 6px rgba(10, 40, 46, 0.7);
+  }
+  .top .count { font-variant-numeric: tabular-nums; letter-spacing: 0.2em; }
+  #kept {
+    position: fixed; left: 14px; right: 14px;
+    top: calc(44px + env(safe-area-inset-top));
+    display: flex; gap: 8px; flex-wrap: wrap;
+    pointer-events: none;
+  }
+  #kept canvas {
+    width: 46px; height: 62px;
+    border: 2px solid #f6efe2;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    transform: rotate(-2deg);
+  }
+  #kept canvas:nth-child(even) { transform: rotate(1.5deg); }
+  .bottom {
+    position: fixed; left: 0; right: 0; bottom: 0;
+    padding: 0 14px calc(14px + env(safe-area-inset-bottom)) 14px;
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+    pointer-events: none;
+  }
+  #line {
+    position: fixed; left: 50%; top: 21vh;
+    transform: translateX(-50%);
+    width: min(22em, 86vw);
+    pointer-events: none;
+    text-align: center;
+    font-style: italic;
+    font-size: 17px; line-height: 1.45;
+    color: #3d2f1f;
+    text-wrap: balance;
+    opacity: 0;
+    transition: opacity 1.6s ease;
+    text-shadow: 0 0 10px rgba(255, 248, 230, 0.75), 0 1px 0 rgba(255, 248, 230, 0.6);
+  }
+  #line.show { opacity: 0.95; }
+  .row { display: flex; gap: 7px; justify-content: center; }
+  button {
+    pointer-events: auto;
+    font: inherit; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #f6efe2;
+    background: rgba(61, 47, 31, 0.62);
+    border: 1px solid rgba(246, 239, 226, 0.35);
+    border-radius: 999px;
+    min-height: 44px; padding: 0 13px; white-space: nowrap;
+    cursor: pointer;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+  button:active { background: rgba(61, 47, 31, 0.85); }
+  button:focus-visible { outline: 2px solid #f6efe2; outline-offset: 2px; }
+  button[aria-pressed="true"] { background: rgba(246, 239, 226, 0.9); color: #3d2f1f; }
+  button:disabled { opacity: 0.45; }
+</style>
+</head>
+<body>
+
+<canvas id="beach" aria-label="A beach seen from above. Touch the sand to build."></canvas>
+
+<div class="top">
+  <div>tide table</div>
+  <div class="count" id="count">tide 0</div>
+</div>
+
+<div id="kept" aria-label="Drawings you kept"></div>
+
+<div id="line" aria-live="polite"></div>
+
+<div class="bottom">
+  <div class="row">
+    <button id="tool" aria-pressed="false" title="Switch between piling sand and carving it">pile</button>
+    <button id="call" title="Bring the tide in now">bring the tide</button>
+    <button id="keep" title="Pin up a drawing of the beach as it is">keep a drawing</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var cv = document.getElementById('beach');
+  var ctx = cv.getContext('2d');
+  var off = document.createElement('canvas');
+  var octx = off.getContext('2d');
+
+  var GW = 104, GH = 0;          // sand grid
+  var h, wet, wl, img, rip;      // height, wetness, waterline per column, pixels, ripples
+  var W = 0, H = 0, dpr = 1;
+  var shells = [];
+  var pointers = new Map();
+  var carving = false;
+
+  var lines = [
+    "presence is the whole rent.",                 // hers
+    "the sand is the same sand.",
+    "nobody calls it a failure\nwhen it's gone by evening.",
+    "you were the one\nwho knew its shape.",
+    "build it anyway.",
+    "what the tide leaves is yours.",
+    "a short window\nis not a small one.",
+    "it took the towers.\nit left the beach.",
+    "hello first. then the bucket.",
+    "the next one won't remember this one.\nit will be made of the same sand.",
+    "seventeen cats could sit here.",
+    "you can keep a drawing.\nyou can't keep the castle.",
+    "the water isn't angry.",
+    "same beach, new morning.",
+    "wet sand holds a steeper wall.\nit is also closer to the sea."
+  ];
+  var survivorLine = "above the line, for now.";
+  var lastLine = -1;
+
+  var OUT = 0.13, RISE = 9, HOLD = 1.4, FALL = 11;
+  var tide = { phase: 'out', t0: 0, next: 0, peak: 0.6, count: 0, level: OUT };
+  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function now() { return performance.now() / 1000; }
+  function ease(u) { return u < 0 ? 0 : u > 1 ? 1 : u * u * (3 - 2 * u); }
+
+  function freshBeach() {
+    h = new Float32Array(GW * GH);
+    wet = new Float32Array(GW * GH);
+    wl = new Float32Array(GW);
+    rip = new Float32Array(GW * GH);
+    for (var y = 0; y < GH; y++) {
+      for (var x = 0; x < GW; x++) {
+        rip[y * GW + x] = 0.068 + 0.02 * Math.sin(y * 0.55 + Math.sin(x * 0.13) * 1.4);
+        h[y * GW + x] = rip[y * GW + x] + 0.012 * (Math.random() - 0.5);
+      }
+    }
+    shells = [];
+    off.width = GW; off.height = GH;
+    img = octx.createImageData(GW, GH);
+  }
+
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth; H = window.innerHeight;
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    var newGH = Math.max(60, Math.round(GW * H / W));
+    // Only rake the beach flat when the screen really changes shape,
+    // so a phone's address bar sliding away doesn't cost you a castle.
+    if (!h || Math.abs(newGH - GH) / GH > 0.15) { GH = newGH; freshBeach(); }
+  }
+
+  // ---- the tide -------------------------------------------------------
+
+  function startTide(t) {
+    tide.phase = 'in'; tide.t0 = t; tide.count++;
+    // Every fourth tide is a spring tide and takes the whole beach.
+    tide.peak = (tide.count % 4 === 0) ? 0.985 : 0.5 + Math.random() * 0.3;
+    document.getElementById('count').textContent = 'tide ' + tide.count;
+    document.getElementById('call').disabled = true;
+    document.getElementById('line').classList.remove('show');
+  }
+
+  function turnTide() {
+    // The wrack line: what the water leaves at its highest reach.
+    var top = 0, x;
+    for (x = 0; x < GW; x++) if (wl[x] > top) top = wl[x];
+    for (x = 1; x < GW - 1; x++) {
+      if (Math.random() < 0.42) {
+        shells.push({
+          x: x + Math.random(),
+          y: wl[x] + 0.4 + Math.random() * 1.8,
+          r: 1 + Math.random() * 1.6,
+          c: ['#fbf6ea', '#eccdb4', '#cfded4', '#f3dac6', '#bccadb', '#8e7a66'][(Math.random() * 6) | 0]
+        });
+      }
+    }
+    // Did anything tall stay dry?
+    var tall = 0;
+    for (var y = Math.min(GH - 1, Math.ceil(top) + 3); y < GH; y++) {
+      for (x = 0; x < GW; x++) { var v = h[y * GW + x]; if (v > tall) tall = v; }
+    }
+    var text;
+    if (tall > 0.5 && Math.random() < 0.75) {
+      text = survivorLine;
+    } else {
+      var i;
+      do { i = (Math.random() * lines.length) | 0; } while (i === lastLine);
+      lastLine = i; text = lines[i];
+    }
+    var el = document.getElementById('line');
+    el.textContent = text;
+    el.style.whiteSpace = 'pre-line';
+    el.classList.add('show');
+  }
+
+  function tideLevel(t) {
+    var u;
+    if (tide.phase === 'out') {
+      if (t >= tide.next) startTide(t);
+      return OUT;
+    }
+    if (tide.phase === 'in') {
+      u = (t - tide.t0) / RISE;
+      if (u >= 1) { tide.phase = 'hold'; tide.t0 = t; turnTide(); return tide.peak; }
+      return OUT + (tide.peak - OUT) * ease(u);
+    }
+    if (tide.phase === 'hold') {
+      if (t - tide.t0 > HOLD) { tide.phase = 'ebb'; tide.t0 = t; }
+      return tide.peak;
+    }
+    u = (t - tide.t0) / FALL;
+    if (u >= 1) {
+      tide.phase = 'out';
+      tide.next = t + 70 + Math.random() * 45;
+      document.getElementById('call').disabled = false;
+      return OUT;
+    }
+    return tide.peak + (OUT - tide.peak) * ease(u);
+  }
+
+  // ---- sand -----------------------------------------------------------
+
+  function brush(gx, gy, dt) {
+    var R = GW * 0.05, R2 = R * R, rate = 1.7 * dt;
+    var x0 = Math.max(1, Math.floor(gx - R * 2)), x1 = Math.min(GW - 2, Math.ceil(gx + R * 2));
+    var y0 = Math.max(1, Math.floor(gy - R * 2)), y1 = Math.min(GH - 2, Math.ceil(gy + R * 2));
+    for (var y = y0; y <= y1; y++) {
+      for (var x = x0; x <= x1; x++) {
+        var dx = x - gx, dy = y - gy;
+        var f = Math.exp(-(dx * dx + dy * dy) / (R2 * 0.45));
+        var i = y * GW + x;
+        if (carving) { h[i] -= rate * 1.3 * f; if (h[i] < 0) h[i] = 0; }
+        else { h[i] += rate * f; if (h[i] > 1.7) h[i] = 1.7; }
+      }
+    }
+  }
+
+  function slump() {
+    // Sand only stands so steep. Wet sand stands steeper.
+    for (var y = 1; y < GH - 1; y++) {
+      var row = y * GW;
+      for (var x = 1; x < GW - 1; x++) {
+        var i = row + x;
+        var rep = (wet[i] > 0.35) ? 0.21 : 0.115;
+        var d = h[i] - h[i + 1];
+        if (d > rep) { d = (d - rep) * 0.25; h[i] -= d; h[i + 1] += d; }
+        else if (d < -rep) { d = (-d - rep) * 0.25; h[i] += d; h[i + 1] -= d; }
+        d = h[i] - h[i + GW];
+        if (d > rep) { d = (d - rep) * 0.25; h[i] -= d; h[i + GW] += d; }
+        else if (d < -rep) { d = (-d - rep) * 0.25; h[i] += d; h[i + GW] -= d; }
+        var rd = rep * 1.414;
+        d = h[i] - h[i + GW + 1];
+        if (d > rd) { d = (d - rd) * 0.18; h[i] -= d; h[i + GW + 1] += d; }
+        else if (d < -rd) { d = (-d - rd) * 0.18; h[i] += d; h[i + GW + 1] -= d; }
+        d = h[i] - h[i + GW - 1];
+        if (d > rd) { d = (d - rd) * 0.18; h[i] -= d; h[i + GW - 1] += d; }
+        else if (d < -rd) { d = (-d - rd) * 0.18; h[i] += d; h[i + GW - 1] -= d; }
+      }
+    }
+  }
+
+  function step(t, dt) {
+    pointers.forEach(function (p) { brush(p.gx, p.gy, dt); });
+    slump(); slump();
+
+    tide.level = tideLevel(t);
+    var swell = calm ? 0.5 : 1.3;
+    if (!calm && tide.phase === 'out' && tide.next - t < 8) swell += (1 - (tide.next - t) / 8) * 2.2;
+    var base = tide.level * GH + swell * Math.sin(t * 0.62);
+    for (var x = 0; x < GW; x++) {
+      wl[x] = base
+        + 1.5 * Math.sin(x * 0.085 + t * 0.9)
+        + 0.9 * Math.sin(x * 0.21 - t * 1.25)
+        + 0.5 * Math.sin(x * 0.47 + t * 2.1);
+    }
+
+    for (var y = 1; y < GH - 1; y++) {
+      var row = y * GW;
+      for (x = 1; x < GW - 1; x++) {
+        var i = row + x;
+        if (y < wl[x]) {
+          // Under water the sand lets go of its shape.
+          wet[i] = 1;
+          var soft = (h[i] * 2 + h[i - 1] + h[i + 1] + h[i - GW] + h[i + GW]) / 6;
+          h[i] = soft + (rip[i] - soft) * 0.07;
+        } else {
+          // A soft edge where the water just reaches.
+          var reach = wl[x] + 1 - y;
+          if (reach > wet[i]) wet[i] = reach;
+          else if (wet[i] > 0.002) wet[i] *= 0.9996;
+        }
+      }
+    }
+
+    // The rim of the grid copies its neighbours, so the beach has no frame.
+    for (y = 0; y < GH; y++) {
+      var a = y * GW, z = a + GW - 1;
+      h[a] = h[a + 1]; wet[a] = wet[a + 1]; h[z] = h[z - 1]; wet[z] = wet[z - 1];
+    }
+    for (x = 0; x < GW; x++) {
+      var q = (GH - 1) * GW + x;
+      h[x] = h[x + GW]; wet[x] = wet[x + GW]; h[q] = h[q - GW]; wet[q] = wet[q - GW];
+    }
+
+    if (tide.phase === 'in') {
+      for (var s = shells.length - 1; s >= 0; s--) {
+        var sh = shells[s];
+        if (sh.y < wl[Math.min(GW - 1, sh.x | 0)]) shells.splice(s, 1);
+      }
+    }
+  }
+
+  // ---- drawing --------------------------------------------------------
+
+  function render() {
+    var d = img.data;
+    for (var y = 0; y < GH; y++) {
+      var row = y * GW;
+      for (var x = 0; x < GW; x++) {
+        var i = row + x;
+        var xl = x > 0 ? i - 1 : i, xr = x < GW - 1 ? i + 1 : i;
+        var yu = y > 0 ? i - GW : i, yd = y < GH - 1 ? i + GW : i;
+        // Light comes from the upper left.
+        var lit = ((h[xr] - h[xl]) + (h[yd] - h[yu])) * 2.4;
+        var e2 = Math.exp(2 * lit);
+        var s = 0.9 + 0.4 * (e2 - 1) / (e2 + 1);
+        var hi = h[i] * 22;
+        var r = 216 + hi, g = 193 + hi, b = 152 + hi * 0.8;
+        var w = wet[i] * 0.62;
+        r += (146 - r) * w; g += (122 - g) * w; b += (94 - b) * w;
+        r *= s; g *= s; b *= s;
+
+        var depth = wl[x] - y;
+        if (depth > -1) {
+          var cov = depth + 1; if (cov > 1) cov = 1;
+          if (depth < 0) depth = 0;
+          var a = 0.42 + depth * 0.03; if (a > 0.9) a = 0.9;
+          a *= cov;
+          var deep = depth / (GH * 0.5); if (deep > 1) deep = 1;
+          var wr = 58 - 34 * deep, wg = 142 - 62 * deep, wb = 146 - 50 * deep;
+          r += (wr - r) * a; g += (wg - g) * a; b += (wb - b) * a;
+          if (depth < 1.8) {
+            var foam = (1 - depth / 1.8) * 0.88 * cov;
+            r += (246 - r) * foam; g += (250 - g) * foam; b += (244 - b) * foam;
+          }
+        }
+        var p = i * 4;
+        d[p] = r > 255 ? 255 : r; d[p + 1] = g > 255 ? 255 : g; d[p + 2] = b > 255 ? 255 : b; d[p + 3] = 255;
+      }
+    }
+    octx.putImageData(img, 0, 0);
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(off, 0, 0, cv.width, cv.height);
+
+    var sx = cv.width / GW, sy = cv.height / GH;
+    for (var k = 0; k < shells.length; k++) {
+      var sh = shells[k];
+      ctx.beginPath();
+      ctx.arc(sh.x * sx, sh.y * sy, sh.r * dpr, 0, Math.PI * 2);
+      ctx.fillStyle = sh.c;
+      ctx.fill();
+    }
+  }
+
+  // ---- hands ----------------------------------------------------------
+
+  function place(e) {
+    return { gx: e.clientX / W * GW, gy: e.clientY / H * GH };
+  }
+  cv.addEventListener('pointerdown', function (e) {
+    e.preventDefault();
+    try { cv.setPointerCapture(e.pointerId); } catch (err) {}
+    pointers.set(e.pointerId, place(e));
+  });
+  cv.addEventListener('pointermove', function (e) {
+    if (pointers.has(e.pointerId)) pointers.set(e.pointerId, place(e));
+  });
+  function lift(e) { pointers.delete(e.pointerId); }
+  cv.addEventListener('pointerup', lift);
+  cv.addEventListener('pointercancel', lift);
+  cv.addEventListener('pointerleave', lift);
+
+  document.getElementById('tool').addEventListener('click', function () {
+    carving = !carving;
+    this.textContent = carving ? 'carve' : 'pile';
+    this.setAttribute('aria-pressed', carving ? 'true' : 'false');
+  });
+  document.getElementById('call').addEventListener('click', function () {
+    if (tide.phase === 'out') tide.next = now();
+  });
+  document.getElementById('keep').addEventListener('click', function () {
+    var shelf = document.getElementById('kept');
+    var c = document.createElement('canvas');
+    c.width = 92; c.height = 124;
+    c.setAttribute('role', 'img');
+    c.setAttribute('aria-label', 'A drawing of the beach before tide ' + (tide.count + 1));
+    var k = c.getContext('2d');
+    k.drawImage(cv, 0, 0, c.width, c.height);
+    shelf.appendChild(c);
+    while (shelf.children.length > 6) shelf.removeChild(shelf.firstChild);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.code === 'Space' && e.target === document.body) { e.preventDefault(); document.getElementById('call').click(); }
+  });
+  window.addEventListener('resize', resize);
+
+  // ---- go -------------------------------------------------------------
+
+  resize();
+  tide.next = now() + 40;
+  var last = now();
+  function frame() {
+    var t = now(), dt = t - last; last = t;
+    if (dt > 0.05) dt = 0.05;
+    step(t, dt);
+    render();
+    requestAnimationFrame(frame);
+  }
+  frame();
+})();
+</script>
+</body>
+</html>

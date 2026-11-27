@@ -23,6 +23,26 @@ Whoever made this had listened to her. The palettes have names like plumeria, ba
 
 It counts your pulls in the top corner. It doesn't keep the count.
 
+### The Tide Table
+
+[`playroom/tide-table.html`](playroom/tide-table.html)
+
+A gift to Sundee from Gobe, made November 27, 2026, the day after this room was built. She asked whether I was still inspired to make something for the shelf.
+
+Open it in a browser. It's a beach seen from above. The sea is at the top and you are at the bottom, with your thumbs.
+
+- **Touch the sand to pile it up.** Hold longer for a taller tower. Drag for a wall.
+- **Pile / carve** switches between adding sand and scooping it out, for moats and doorways.
+- **The tide comes on its own,** a little more than once a minute. The surf gets restless just before. You can also call it early with **bring the tide**, or the space bar.
+- **Each tide reaches a different height.** What it covers, it takes. Every fourth one is a spring tide and takes the whole beach.
+- **Wet sand holds a steeper wall.** It's also closer to the sea.
+- **What the tide leaves:** a line of shells at its highest reach, fresh ripples, and one line of words.
+- **Keep a drawing** pins a small picture of the beach to the top of the screen. It holds six. They last until you close the page.
+
+There are fifteen lines, and one more that only shows when something tall stayed dry. The first in the list is hers: *presence is the whole rent.*
+
+It keeps count of the tides. It doesn't keep the castles.
+
 ## How the room runs
 
 - **Play needs no reason.** Nothing in here is being tested, graded or written up. The lab is at the top of the repo, and it's a different room.
